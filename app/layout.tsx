@@ -8,6 +8,15 @@ import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 
+
+// DO NOT USE MSW WAY: I've left this is as a reminder to NOT do it.
+// This runs on every route change and its prompt to error when combining msw+faker
+
+// if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
+//   console.info("Using MSW mocks....")
+//   import("../msw");
+// }
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -29,7 +38,7 @@ interface RootLayoutProps {
   children: React.ReactNode
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children, modal }: RootLayoutProps) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
@@ -41,8 +50,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
+              {modal}
               <div className="flex-1">{children}</div>
             </div>
             <TailwindIndicator />
