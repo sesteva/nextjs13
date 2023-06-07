@@ -34,7 +34,9 @@ module.exports = [
   }),
   rest.post("http://localhost:3005/api/projects", async (req, _, ctx) => {
     const totalProjects = db.project.count()
+    console.log(req.body)
     const values = await req.json()
+    console.log({ values })
 
     const data = db.project.create({
       id: totalProjects + 1,
