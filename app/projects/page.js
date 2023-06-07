@@ -1,7 +1,9 @@
 import ProjectsTable from "@/components/projects/projects-table"
 
 async function getProjects() {
-  const res = await fetch("http://localhost:3005/api/projects")
+  const res = await fetch("http://localhost:3005/api/projects", {
+    next: { tags: ["projects"] },
+  })
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary

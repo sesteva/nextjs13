@@ -1,7 +1,6 @@
 "use server"
 
 export async function addProject(formData) {
-  console.log(formData)
   const res = await fetch(`http://localhost:3005/api/projects`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
