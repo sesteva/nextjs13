@@ -1,7 +1,10 @@
 "use server"
 
+import { revalidatePath } from "next/cache"
+
 export async function addProject(formData) {
   const res = await fetch(`http://localhost:3005/api/projects`, {
+    next: { revalidate: 0 },
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -10,9 +13,11 @@ export async function addProject(formData) {
       jobNumber: formData.get("jobNumber"),
     }),
   })
-
+  // await new Promise((resolve) => setTimeout(resolve, 3000))
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to add project")
   }
+  revalidatePath("./projects")
+  return res.json()
 }

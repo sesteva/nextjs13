@@ -9,15 +9,21 @@ import { experimental_useFormStatus as useFormStatus } from "react-dom"
 import { Button } from "@/components/ui/button"
 import { TextField } from "@/components/ui/text-field"
 
-import { addProject } from "./add-project-action"
+import { addProject } from "../../app/add-project-action"
+
+export const dynamic = "force-dynamic"
+export const revalidate = 0
 
 export default function CreateProjectForm() {
   const router = useRouter()
   const { pending } = useFormStatus()
+  console.log("rendering...createProjectForm")
 
   async function action(formData) {
     await addProject(formData)
-    redirect(`/projects`)
+    console.log("project added, redirecting...")
+    // router.back()
+    redirect("/projects")
   }
 
   const onDismiss = useCallback(() => {

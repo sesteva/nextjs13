@@ -35,7 +35,8 @@ export const metadata: Metadata = {
 }
 
 interface RootLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode,
+  modal: React.ReactNode
 }
 
 export default function RootLayout({ children, modal }: RootLayoutProps) {
@@ -55,6 +56,7 @@ export default function RootLayout({ children, modal }: RootLayoutProps) {
               <SiteHeader />
               {modal}
               <div className="flex-1">{children}</div>
+
             </div>
             <TailwindIndicator />
           </ThemeProvider>

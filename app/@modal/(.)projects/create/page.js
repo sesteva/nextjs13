@@ -11,9 +11,12 @@ import CreateProjectForm from "@/components/projects/create-project-form"
 export default function CreateProjectModal() {
   // see above
   const pathname = usePathname()
+  console.log({ pathname })
   if (!pathname.includes("create")) {
+    console.log("not showing modal this time")
     return null
   }
+  console.log("showing modal this time")
   return (
     <Modal>
       <CreateProjectForm />

@@ -1,8 +1,12 @@
 import ProjectsTable from "@/components/projects/projects-table"
 
+export const dynamic = "force-dynamic"
+export const revalidate = 0
+
 async function getProjects() {
+  console.log("going to get prjs....")
   const res = await fetch("http://localhost:3005/api/projects", {
-    next: { tags: ["projects"] },
+    cache: "no-cache",
   })
 
   if (!res.ok) {
@@ -15,6 +19,7 @@ async function getProjects() {
 
 export default async function Page() {
   const response = await getProjects()
+  console.log("rendering...Projects page")
 
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
