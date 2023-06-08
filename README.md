@@ -8,6 +8,7 @@
 - Icons from [Lucide](https://lucide.dev)
 - Dark mode with `next-themes`
 - Tailwind CSS class sorting, merging and linting.
+- MSW as standalone server
 - Server Actions
 - Intercept Urls
 
