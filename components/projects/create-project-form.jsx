@@ -23,8 +23,11 @@ export default function CreateProjectForm() {
   async function action(formData) {
     await addProject(formData)
     console.log("project added, redirecting...")
-    router.back()
-    // redirect("/projects")
+    // Hack to make the projects page refresh data!
+    const random = Math.random()
+    redirect(`/projects?${random}`)
+    // router.back() -> this does not work as expected
+    // redirect("/projects") -> this does not work as expected
   }
 
   const onDismiss = useCallback(() => {

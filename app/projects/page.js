@@ -10,7 +10,7 @@ async function getProjects() {
   console.log("going to get prjs....")
   const res = await fetch("http://localhost:3005/api/projects", {
     next: { tags: ["projects"] },
-    cache: "no-cache",
+    cache: "no-store",
   })
 
   if (!res.ok) {

@@ -4,6 +4,7 @@ import { revalidatePath, revalidateTag } from "next/cache"
 
 export async function addProject(formData) {
   const res = await fetch(`http://localhost:3005/api/projects`, {
+    cache: "no-cache",
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
