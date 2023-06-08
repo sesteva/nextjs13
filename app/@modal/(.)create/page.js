@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation"
 
 import Modal from "@/components/ui/modal"
 import CreateProjectForm from "@/components/projects/create-project-form"
+import CreateProjectFormTransition from "@/components/projects/create-project-form-transition"
 
 export default function CreateProjectModal() {
   // see above
@@ -20,6 +21,7 @@ export default function CreateProjectModal() {
   return (
     <Modal>
       <CreateProjectForm />
+      <CreateProjectFormTransition />
     </Modal>
   )
 }

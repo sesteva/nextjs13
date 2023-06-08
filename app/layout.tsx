@@ -40,6 +40,7 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children, modal }: RootLayoutProps) {
+  console.log("re-rendering layout")
   return (
     <>
       <html lang="en" suppressHydrationWarning>
@@ -50,6 +51,7 @@ export default function RootLayout({ children, modal }: RootLayoutProps) {
             fontSans.variable
           )}
         >
+
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 
             <div className="relative flex min-h-screen flex-col">

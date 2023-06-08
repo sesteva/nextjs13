@@ -8,4 +8,4 @@ export default function CreateProjectPage() {
       We can add a more complex form in this version for example to create a prj
     </section>
   )
-}
+} 

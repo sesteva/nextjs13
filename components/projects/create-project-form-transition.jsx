@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback } from "react"
+import { useCallback, useRef, useTransition } from "react"
 import { redirect, useRouter } from "next/navigation"
 import * as Dialog from "@radix-ui/react-dialog"
 import * as Form from "@radix-ui/react-form"
@@ -17,12 +17,15 @@ export const revalidate = 0
 export default function CreateProjectForm() {
   const router = useRouter()
   const { pending } = useFormStatus()
+  let [isPending, startTransition] = useTransition()
+  const form = useRef(null)
 
   console.log("rendering...createProjectForm")
 
-  async function action(formData) {
-    await addProject(formData)
-    console.log("project added, redirecting...")
+  async function addPrj(e) {
+    e.preventDefault()
+    const data = new FormData(form.current)
+    await addProject(data)
     router.back()
     // redirect("/projects")
   }
@@ -33,7 +36,7 @@ export default function CreateProjectForm() {
 
   return (
     <Form.Root asChild>
-      <form action={action}>
+      <form ref={form}>
         <TextField
           name="name"
           label="Name"
@@ -52,8 +55,11 @@ export default function CreateProjectForm() {
         <TextField name="jobNumber" max="20" label="Job Number" />
 
         <div className="align-items mt-6 flex justify-end">
-          <Button type="submit" className="mr-1" disabled={pending}>
-            {pending ? "Creating..." : "Create"}
+          <Button
+            className="mr-1"
+            onClick={(e) => startTransition(() => addPrj(e))}
+          >
+            Tranisition Create
           </Button>
 
           <Dialog.Close asChild>
