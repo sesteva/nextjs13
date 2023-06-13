@@ -1,16 +1,26 @@
 import Link from "next/link"
-import Modal from "@cintui/modal"
+import { Button } from "@cintui/button"
 
 import CreateProjectForm from "@/components/projects/create-project-form"
 
 export default function ProjectsTable({ projects }) {
   return (
     <>
-      {/* <div>
-        <Modal>
-          <CreateProjectForm />
-        </Modal>
-      </div> */}
+      <div className="sm:flex sm:items-center">
+        <div className="float-right sm:flex-auto ">
+          <h1 className="text-base font-semibold leading-6 text-gray-900 ">
+            Projects
+          </h1>
+          <p className="mt-2 text-sm text-gray-700">
+            A list of all the projects in your account
+          </p>
+        </div>
+        <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+          <Button asChild>
+            <CreateProjectForm />
+          </Button>
+        </div>
+      </div>
       <div className="mt-8 flow-root">
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
