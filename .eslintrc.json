@@ -13,7 +13,10 @@
   "rules": {
     "@next/next/no-html-link-for-pages": "off",
     "react/jsx-key": "off",
-    "tailwindcss/no-custom-classname": "off"
+    "tailwindcss/no-custom-classname": "off",
+    "import/no-relative-parent-imports": ["error",{
+      "ignore": ["@cintui", "@/lib", "@/config","@/styles", "@/types", "@/components"]
+    }]
   },
   "settings": {
     "tailwindcss": {

@@ -4,8 +4,8 @@
 // Same applies to the "use client" above
 // https://github.com/vercel/next.js/issues/49662
 import { usePathname } from "next/navigation"
+import Modal from "@cintui/modal"
 
-import Modal from "@/components/ui/modal"
 import CreateProjectForm from "@/components/projects/create-project-form"
 
 export default function CreateProjectModal() {

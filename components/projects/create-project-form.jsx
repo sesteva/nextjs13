@@ -2,12 +2,11 @@
 
 import { useCallback } from "react"
 import { redirect, useRouter } from "next/navigation"
+import { Button } from "@cintui/button"
+import { TextField } from "@cintui/text-field"
 import * as Dialog from "@radix-ui/react-dialog"
 import * as Form from "@radix-ui/react-form"
 import { experimental_useFormStatus as useFormStatus } from "react-dom"
-
-import { Button } from "@/components/ui/button"
-import { TextField } from "@/components/ui/text-field"
 
 import { addProject } from "./add-project-action"
 

@@ -56,8 +56,9 @@ export default function RootLayout({ children, modal }: RootLayoutProps) {
 
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
-              {modal}
+
               <div className="flex-1">{children}</div>
+              {modal}
 
             </div>
             <TailwindIndicator />

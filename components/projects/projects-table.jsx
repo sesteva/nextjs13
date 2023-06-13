@@ -1,6 +1,6 @@
 import Link from "next/link"
+import Modal from "@cintui/modal"
 
-import Modal from "@/components/ui/modal"
 import CreateProjectForm from "@/components/projects/create-project-form"
 
 export default function ProjectsTable({ projects }) {

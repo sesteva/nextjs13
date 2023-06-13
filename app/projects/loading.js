@@ -50,16 +50,16 @@ export default function Loading() {
                       scope="row"
                       className="whitespace-nowrap py-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0"
                     >
-                      <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-8 mb-2.5" />
+                      <div className="mb-2.5 h-2.5 w-8 rounded-full bg-gray-300 dark:bg-gray-600" />
                     </th>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5" />
+                      <div className="mb-2.5 h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600" />
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5" />
+                      <div className="mb-2.5 h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600" />
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5" />
+                      <div className="mb-2.5 h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600" />
                     </td>
                   </tr>
                 </tbody>

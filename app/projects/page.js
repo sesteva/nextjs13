@@ -1,6 +1,6 @@
 import Link from "next/link"
+import { Button } from "@cintui/button"
 
-import { Button } from "@/components/ui/button"
 import ProjectsTable from "@/components/projects/projects-table"
 
 // export const dynamic = "force-dynamic"
