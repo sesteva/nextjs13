@@ -39,7 +39,7 @@ interface RootLayoutProps {
   modal: React.ReactNode
 }
 
-export default function RootLayout({ children, modal }: RootLayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   console.log("re-rendering layout")
   return (
     <>
@@ -58,7 +58,7 @@ export default function RootLayout({ children, modal }: RootLayoutProps) {
               <SiteHeader />
 
               <div className="flex-1">{children}</div>
-              {modal}
+
 
             </div>
             <TailwindIndicator />
