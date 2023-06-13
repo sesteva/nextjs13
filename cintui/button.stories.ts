@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
 
-import { Button, buttonVariants } from "../cintui/button"
+import { Button, buttonVariants } from "./button"
 
 const meta: Meta<typeof Button> = {
   title: 'Atoms/Button',
@@ -10,6 +10,8 @@ const meta: Meta<typeof Button> = {
 
   }
 };
+
+
 
 export default meta;
 type Story = StoryObj<typeof Button>;
