@@ -1,0 +1,46 @@
+input#hide,
+input#show {
+  display: none;
+}
+label#open {
+  display: none;
+}
+div#menu {
+  width: 200px;
+}
+input#hide:checked ~ div#menu {
+  width: 3.5rem;
+  overflow: hidden;
+}
+input#hide::not(:checked) ~ div#menu {
+  max-width: 200px;
+  transition: max-width 0.25s ease-in-out;
+}
+input#hide:checked ~ div > label#open {
+  display: block;
+}
+input#hide:checked ~ div > label#close {
+  display: none;
+}
+
+#menu {
+  container-type: inline-size;
+}
+
+@container (min-width: 100px) {
+  #menu .expanded {
+    display: block;
+  }
+  #menu .collapsed {
+    display: none;
+  }
+}
+
+@container (width < 100px) {
+  #menu .expanded {
+    display: none;
+  }
+  #menu .collapsed {
+    display: block;
+  }
+}

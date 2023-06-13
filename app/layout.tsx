@@ -4,10 +4,13 @@ import { Metadata } from "next"
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
+import { Icons } from "@/components/icons"
+import { Sidebar } from "@/components/sidebar"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 
+import "@/styles/sidebar.css"
 
 // DO NOT USE MSW WAY: I've left this is as a reminder to NOT do it.
 // This runs on every route change and its prompt to error when combining msw+faker
@@ -35,7 +38,7 @@ export const metadata: Metadata = {
 }
 
 interface RootLayoutProps {
-  children: React.ReactNode,
+  children: React.ReactNode
   modal: React.ReactNode
 }
 
@@ -51,16 +54,35 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <div className="hidden md:block">
+              <div className="border-t">
+                <div className="bg-background">
+                  <div className="flex">
+                    <input id="hide" type="checkbox" name="group" />
+                    <div
+                      className="flex flex-col duration-300 ease-in-out"
+                      id="menu"
+                    >
+                      <label htmlFor="hide" id="open">
+                        <Icons.panelLeftOpen className="float-right" />
+                      </label>
+                      <label htmlFor="hide" id="close">
+                        <Icons.panelLeftClose className="float-right" />
+                      </label>
+                      <div className="pb-12 transition-all duration-300 ease-in-out">
+                        <Sidebar items={siteConfig.mainNav} />
+                      </div>
+                    </div>
 
-            <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
-
-              <div className="flex-1">{children}</div>
-
-
+                    <div className="flex-1 border-l">
+                      <div className="h-full px-4 py-6 lg:px-8">{children}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
             <TailwindIndicator />
           </ThemeProvider>
         </body>

@@ -1,8 +1,6 @@
 import * as Form from "@radix-ui/react-form"
 
 function TextField({ name, label, autoFocus, ...otherProps }) {
-  const data = {}
-
   return (
     <Form.Field className="mb-[10px] grid" name={name}>
       <div className="flex items-baseline justify-between">

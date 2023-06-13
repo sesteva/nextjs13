@@ -1,6 +1,8 @@
 import {
   LucideProps,
   Moon,
+  PanelLeftClose,
+  PanelLeftOpen,
   SunMedium,
   Twitter,
   type Icon as LucideIcon,
@@ -9,6 +11,8 @@ import {
 export type Icon = LucideIcon
 
 export const Icons = {
+  panelLeftOpen: PanelLeftOpen,
+  panelLeftClose: PanelLeftClose,
   sun: SunMedium,
   moon: Moon,
   twitter: Twitter,
