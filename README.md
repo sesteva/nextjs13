@@ -13,7 +13,7 @@
 - Intercept Urls (now removed as proved not ready)
 - Storybook
 - i18n with examples for english and spanish
-- treat @cintui as external package + eslint to protect from importing relatively
+- treat @cintui as external package + eslint to protect from importing relatively - We can/probably will extract later to its own package
 - Vertical Side Menu with pure CSS , server side
 - Menu is config based which enables us to pick up the config for testing
 
