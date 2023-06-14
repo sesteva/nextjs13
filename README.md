@@ -19,6 +19,9 @@
 
 
 ## TODO
+- cleanup moving all radix components into its own proxy in @cintui
+- apply variants to all components at @cintui
+- cleanup some JS and JSX to TS and TSX
 - apply themes to all components
 - add better loading skeletons
 - add a manual refresh data button
