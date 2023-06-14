@@ -1,5 +1,7 @@
 import "@/styles/globals.css"
 import { Metadata } from "next"
+import { notFound } from "next/navigation"
+import { useLocale } from "next-intl"
 
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
@@ -40,13 +42,21 @@ export const metadata: Metadata = {
 interface RootLayoutProps {
   children: React.ReactNode
   modal: React.ReactNode
+  params: { locale: string }
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
-  console.log("re-rendering layout")
+export default function RootLayout({ children, params }: RootLayoutProps) {
+  const locale = useLocale()
+  console.log("re-rendering layout", locale)
+
+  // Show a 404 error if the user requests an unknown locale
+  if (params.locale !== locale) {
+    notFound()
+  }
+
   return (
     <>
-      <html lang="en" suppressHydrationWarning>
+      <html lang={locale} suppressHydrationWarning>
         <head />
         <body
           className={cn(

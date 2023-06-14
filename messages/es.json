@@ -1,0 +1,8 @@
+{
+  "Index": {
+    "h1": "Hermosos componentes diseñados"
+  },
+  "LocaleSwitcher": {
+    "switchLocale": "Cambiar a {locale, select, de {Español} en {Inglés} other {Desconocido}}"
+  }
+}
